@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🏠 Hostel Management</h1>
+    <nav>
+      <button class="active" data-tab="rooms">Room Allotment</button>
+      <button data-tab="students">Students</button>
+      <button data-tab="rent">Hostel Rent</button>
+      <button data-tab="laundry">Laundry</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ROOMS: allotment + AC / non-AC -->
+    <section id="rooms">
+      <h2>Add Room</h2>
+      <form id="roomForm">
+        <input id="roomNo" placeholder="Room number (e.g. 101)" required>
+        <input id="roomCap" type="number" min="1" value="2" placeholder="Capacity (beds)" required>
+        <select id="roomAc">
+          <option value="false">Non-AC</option>
+          <option value="true">AC</option>
+        </select>
+        <input id="roomRent" type="number" min="0" placeholder="Monthly rent ₹" required>
+        <button type="submit">Add Room</button>
+      </form>
+      <h2>Rooms</h2>
+      <table>
+        <thead><tr><th>Room</th><th>Type</th><th>Rent/month</th><th>Occupied</th><th></th></tr></thead>
+        <tbody id="roomList"></tbody>
+      </table>
+    </section>
+
+    <!-- STUDENTS: hostel capacity 90 -->
+    <section id="students" hidden>
+      <h2>Hostel Capacity</h2>
+      <div class="capacity">
+        <div class="capacity-text">
+          Students: <b id="stCount">0</b> / <b id="stMax">90</b>
+          · <span id="stLeft">90</span> seats left
+        </div>
+        <div class="capacity-bar"><div id="stBar"></div></div>
+      </div>
+
+      <h2>Admit Student</h2>
+      <form id="studentForm">
+        <input id="stName" placeholder="Student name" required>
+        <input id="stPhone" placeholder="Phone">
+        <input id="stCheckIn" type="date" required>
+        <select id="stRoom" required></select>
+        <button type="submit">Admit & Allot Room</button>
+      </form>
+
+      <h2>Students</h2>
+      <table>
+        <thead><tr><th>Name</th><th>Phone</th><th>Room</th><th>Check-in</th><th></th></tr></thead>
+        <tbody id="studentList"></tbody>
+      </table>
+    </section>
+
+    <!-- RENT -->
+    <section id="rent" hidden>
+      <h2>Record Rent Payment</h2>
+      <form id="rentForm">
+        <select id="rtStudent" required></select>
+        <input id="rtMonth" type="month" required>
+        <input id="rtAmount" type="number" min="0" placeholder="Amount ₹" required>
+        <button type="submit">Save Payment</button>
+      </form>
+      <h2>Rent Status (this month)</h2>
+      <table>
+        <thead><tr><th>Student</th><th>Room</th><th>Rent</th><th>Paid</th><th>Due</th><th>Status</th></tr></thead>
+        <tbody id="rentList"></tbody>
+      </table>
+    </section>
+
+    <!-- LAUNDRY -->
+    <section id="laundry" hidden>
+      <h2>New Laundry Entry</h2>
+      <form id="laundryForm">
+        <select id="lnStudent" required></select>
+        <input id="lnDate" type="date" required>
+        <input id="lnItems" type="number" min="1" placeholder="No. of clothes" required>
+        <input id="lnPrice" type="number" min="0" value="10" placeholder="Price per item ₹" required>
+        <select id="lnStatus">
+          <option>Pending</option>
+          <option>Washing</option>
+          <option>Delivered</option>
+        </select>
+        <button type="submit">Add Entry</button>
+      </form>
+      <h2>Laundry Log</h2>
+      <table>
+        <thead><tr><th>Date</th><th>Student</th><th>Items</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+        <tbody id="laundryList"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

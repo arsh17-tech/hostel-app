@@ -1,0 +1,30 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f4f6fb; color: #222; }
+header { background: #2c3e8f; color: #fff; padding: 16px; }
+header h1 { margin: 0 0 10px; font-size: 22px; }
+nav { display: flex; flex-wrap: wrap; gap: 8px; }
+nav button { background: #fff3; color: #fff; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+nav button.active { background: #fff; color: #2c3e8f; font-weight: bold; }
+main { padding: 16px; max-width: 1000px; margin: auto; }
+section h2 { margin-top: 24px; font-size: 18px; }
+form { display: flex; flex-wrap: wrap; gap: 8px; background: #fff; padding: 12px; border-radius: 8px; }
+input, select { padding: 8px; border: 1px solid #ccc; border-radius: 6px; flex: 1 1 150px; }
+button { padding: 8px 12px; border: none; border-radius: 6px; background: #2c3e8f; color: #fff; cursor: pointer; }
+button.danger { background: #c0392b; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; margin-top: 8px; }
+th, td { padding: 8px; border-bottom: 1px solid #eee; text-align: left; font-size: 14px; }
+th { background: #eef1fa; }
+.paid { color: #1e8e3e; font-weight: bold; }
+.due { color: #c0392b; font-weight: bold; }
+.ac { color: #0b74c4; font-weight: bold; }
+.full { color: #c0392b; }
+.capacity { background: #fff; padding: 12px; border-radius: 8px; }
+.capacity-text { margin-bottom: 8px; font-size: 15px; }
+.capacity-bar { height: 12px; background: #e3e7f3; border-radius: 6px; overflow: hidden; }
+#stBar { height: 100%; width: 0%; background: #2c3e8f; transition: width 0.3s; }
+#stBar.almost { background: #e67e22; }
+#stBar.isfull { background: #c0392b; }
+@media (max-width: 600px) {
+  table { font-size: 12px; }
+  nav button { flex: 1 1 45%; }
+}
