@@ -1,5 +1,7 @@
 # 🏠 Hostel Management App
 
+![App screenshot](screenshot.png)
+
 A web and Android app to manage hostel rooms, student admissions (capacity 90), rent payments, and laundry, with online data and owner/staff login.
 
 ## 🚀 Live Demo
